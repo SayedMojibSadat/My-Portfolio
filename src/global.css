@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .text-shadow-sm {
+        text-shadow: 0px 0px 7px rgb(255, 0, 0);
+    }
+
+    .text-shadow {
+        text-shadow: 0px 0px 15px rgb(255, 0, 0);
+    }
+
+    .text-shadow-lg {
+        text-shadow: 0px 0px 20px rgb(255, 0, 0);
+    }
+
+    .hover-text-shadow-sm:hover {
+        text-shadow: 0px 0px 10px rgb(255, 0, 0);
+    }
+
+    .hover-text-shadow:hover {
+        text-shadow: 0px 0px 15px rgb(255, 0, 0);
+    }
+
+    .hover-text-shadow-lg:hover {
+        text-shadow: 0px 0px 20px rgb(255, 0, 0);
+    }
+}
+
+
+
+
+
+
+
+.home__img--wrapper {
+    width: 450px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.home__img--wrapper::before,
+.home__img--wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.home__img--wrapper::before {
+    background-color: oklch(70.4% 0.191 22.216);
+    animation: animate__before 8s ease-in-out infinite;
+}
+
+.home__img--wrapper::after {
+    background-color: #fb2c36;
+    animation: animate__before 8s ease-in-out infinite;
+}
+
+.home__img--wrapper::after,
+.home__img {
+    animation: animate__after 8s ease-in-out infinite;
+}
+
+.home__img {
+    z-index: 10;
+    position: relative;
+    vertical-align: middle;
+}
+.home__img {
+    width: 300px;
+}
+
+@keyframes animate__before {
+    0% {
+        border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+    }
+    
+    50% {
+        border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+    }
+    
+    100% {
+        border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+    }
+}
+
+@keyframes animate__after {
+    0% {
+        border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+    }
+    
+    50% {
+        border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+    }
+    
+    100% {
+        border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+    }
+}
+
+
+@font-face {
+    font-family: 'simpleFont';
+    src: url('/public/fonts/SairaStencilOne-Regular.ttf');
+}
+@font-face {
+    font-family: 'defaultFont';
+    src: url('/public/fonts/Jost-Medium.ttf');
+}
+
+*{
+    font-family: 'defaultFont';
+}
+
+.box-shadow {
+    box-shadow: 0px 0px 12px rgb(255, 0, 0);
+}
+.hover-box-shadow:hover {
+    box-shadow: 0px 0px 12px rgb(255, 0, 0);
+    /* box-shadow: 0px 0px 12px #ffffff00; */
+}
+
+
+.Experiance__pos__center {
+    position: relative;
+    bottom: -50px;
+    left: -27px;
+}
+
+.Experiance__pos__right {
+    position: relative;
+    bottom: -50px;
+    right: -583px;
+}
+
+@layer utilities {
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #171717;
+        border-radius: 10px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #ef4444;
+        border-radius: 10px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #b91c1c;
+    }
+
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #ef4444 #171717;
+    }
+}
