@@ -4,7 +4,7 @@ function SkillCarts({ key, name, level, description }) {
     return (
         <div
             key={key}
-            className='bg-neutral-900 rounded-xl p-6 flex flex-col justify-between pt-10 pb-10 hover:bg-neutral-800 border hover:border-neutral-950 border-neutral-800 cursor-pointer transition-all duration-300 '
+            className='bg-neutral-900  rounded-xl p-6 gap-5 flex flex-col justify-between pt-10 pb-10 hover:bg-neutral-800 border hover:border-neutral-950 border-neutral-800 cursor-pointer transition-all duration-300 '
         >
             <div className='flex justify-between text-2xl'>
                 <span>{name}</span>

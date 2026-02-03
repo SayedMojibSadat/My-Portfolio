@@ -4,7 +4,7 @@ import Pages from "./features/AllPages/Pages"
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="min-h-screen bg-neutral-950">
       <BrowserRouter>
         <Header />
         <Routes>

@@ -1,47 +1,78 @@
-import React from 'react'
-import { useNavigate } from 'react-router'
+import React, { useState } from 'react'
 
 function Header() {
-  const navigate = useNavigate()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleScrollTo = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    setIsOpen(false)
+  }
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'services', label: 'Services' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'portfolio', label: 'Portfolio' },
+    { id: 'contact', label: 'Contact' },
+  ]
+
   return (
-    <header className='h-[14vh] w-full fixed z-50 top-0 right-0 bg-neutral-950 flex justify-between items-center pl-12 pr-12 '>
+    <header className='h-[14vh] w-full fixed z-50 top-0 left-0 bg-neutral-950 flex items-center justify-between px-6 md:px-12 shadow-lg font-sans'>
       <div
-        onClick={() => {
-          window.scrollTo({ top: 0 })
-          window.location.reload()
-        }}
-        className='text-red-400 text-4xl font-bold hover:cursor-pointer transition-all duration-500 hover-text-shadow w-1/4'
-      >SayedMojibSadat</div>
-      
-      <div className='w-3/7 h-full flex justify-between items-center text-white text-[1.1rem]'>
-        <button className='hover-text-shadow text-red-400 transition-all duration-300 font-bold' onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" })
-        }}>Home</button>
-
-        <button className='hover-text-shadow hover:text-red-400 text-red-100 transition-all duration-300' onClick={() => {
-          window.scrollTo({ top: 528, behavior: "smooth" })
-        }}>About</button>
-
-        <button className='hover-text-shadow hover:text-red-400 text-red-100 transition-all duration-300' onClick={() => {
-          window.scrollTo({ top: 1053, behavior: "smooth" })
-        }}>Experience</button>
-
-        <button className='hover-text-shadow hover:text-red-400 text-red-100 transition-all duration-300' onClick={() => {
-          window.scrollTo({ top: 2278, behavior: "smooth" })
-        }}>Services</button>
-
-        <button className='hover-text-shadow hover:text-red-400 text-red-100 transition-all duration-300' onClick={() => {
-          window.scrollTo({ top: 3289, behavior: "smooth" })
-        }}>Skills</button>
-
-        <button className='hover-text-shadow hover:text-red-400 text-red-100 transition-all duration-300' onClick={() => {
-          window.scrollTo({ top: 4178, behavior: "smooth" })
-        }}>Portfolio</button>
-
-        <button className='hover-text-shadow hover:text-red-400 text-red-100 transition-all duration-300' onClick={() => {
-          window.scrollTo({ top: 4969, behavior: "smooth" })
-        }}>Contact</button>
+        onClick={() => handleScrollTo('home')}
+        className='text-red-400 text-2xl sm:text-3xl md:text-4xl font-bold hover:cursor-pointer transition-all duration-500 hover-text-shadow truncate max-w-[70%]'
+      >
+        SayedMojibSadat
       </div>
+
+      <nav className='hidden md:flex gap-8 items-center text-white text-[1.05rem]'>
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            className={`hover-text-shadow transition-all duration-300 ${item.id === 'home' ? 'text-red-400 font-bold' : 'text-red-100 hover:text-red-400'
+              }`}
+            onClick={() => handleScrollTo(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </nav>
+
+      <button
+        type='button'
+        className='md:hidden flex flex-col justify-center items-center gap-1.5 w-10 h-10'
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label='Toggle navigation menu'
+      >
+        <span className={`h-0.75 w-8 bg-red-400 rounded-full transition-transform duration-300 origin-center ${isOpen ? 'translate-y-2.25 rotate-45' : ''
+          }`} />
+        <span className={`h-0.75 w-8 bg-red-400 rounded-full transition-opacity duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'
+          }`} />
+        <span className={`h-0.75 w-8 bg-red-400 rounded-full transition-transform duration-300 origin-center ${isOpen ? '-translate-y-2.25 -rotate-45' : ''
+          }`} />
+      </button>
+
+      {isOpen && (
+        <div className='md:hidden absolute top-[14vh] inset-x-0 bg-neutral-950 border-t border-neutral-800 flex flex-col items-center w-full py-6 shadow-2xl h-screen sm:h-auto'>
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              className={`w-full text-center py-4 text-lg hover:bg-neutral-900 transition-colors duration-200 ${item.id === 'home' ? 'text-red-400 font-bold' : 'text-red-100 hover:text-red-400'
+                }`}
+              onClick={() => handleScrollTo(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
     </header>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ImageBar({className}) {
+function ImageBar({ className }) {
     return (
-        <div className={`home__img--wrapper ${className && className}`}>
-            <img src="images/profile3.png" alt="" className="home__img" />
+        <div className={`home__img--wrapper ${className || ''}`}>
+            <img src="images/profile3.png" alt="Profile" className="home__img" />
         </div>
     )
 }

@@ -54,22 +54,25 @@ function Service() {
 
 
   return (
-    <div className='h-[165vh] bg-neutral-900 text-red-100 pt-10 p-10 flex flex-col gap-15'>
+    <section
+      id='services'
+      className='min-h-screen bg-neutral-900 text-red-100 pt-10 p-5 md:p-10 flex flex-col gap-15'
+    >
       <div className='w-full flex flex-col items-center justify-center gap-3'>
         <h2 className='text-xl text-red-400 text-shadow'>SERVICES</h2>
-        <h2 className='text-4xl text-neutral-50'>What I done For you</h2>
+        <h2 className='text-4xl text-center text-neutral-50'>What I done For you</h2>
       </div>
 
       <div className='h-full w-full gap-7 flex flex-col mb-15'>
         {serviceData.map((element) => (
-          <div className='w-full h-1/2 grid grid-cols-3 gap-7'>
+          <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7'>
             {element.map((data) => (
               <ServiceCart icon={data.icon} count={data.count} title={data.title} describe={data.describe} />
             ))}
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

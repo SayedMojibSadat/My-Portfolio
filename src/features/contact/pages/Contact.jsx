@@ -28,7 +28,10 @@ function Contact() {
   };
 
   return (
-    <div className='min-h-screen bg-neutral-900 text-red-100 pt-10 p-10 flex flex-col gap-10'>
+    <section
+      id='contact'
+      className='min-h-screen bg-neutral-900 text-red-100 pt-10 p-5 md:p-10 flex flex-col gap-10'
+    >
       <div className='w-full flex flex-col items-center justify-center gap-3 mb-10'>
         <h2 className='text-xl text-red-400 text-shadow uppercase'>GET IN TOUCH</h2>
         <h2 className='text-4xl text-neutral-50'>Contact Me</h2>
@@ -112,7 +115,7 @@ function Contact() {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }
 
