@@ -3,30 +3,22 @@ import React, { useState } from 'react'
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleScrollTo = (id) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-    setIsOpen(false)
-  }
-
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'services', label: 'Services' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'portfolio', label: 'Portfolio' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home',mScroll: 0 ,cScroll: 0, label: 'Home' },
+    { id: 'about',mScroll: 784 ,cScroll: 527, label: 'About' },
+    { id: 'experience',mScroll: 1882 ,cScroll: 1139, label: 'Experience' },
+    { id: 'services',mScroll: 3427 ,cScroll: 1995, label: 'Services' },
+    { id: 'skills',mScroll: 5920 ,cScroll: 2912, label: 'Skills' },
+    { id: 'portfolio',mScroll: 8255 ,cScroll: 3712, label: 'Portfolio' },
+    { id: 'contact',mScroll: 10130 ,cScroll: 4502, label: 'Contact' },
   ]
 
   return (
     <header className='h-[14vh] w-full fixed z-50 top-0 left-0 bg-neutral-950 flex items-center justify-between px-6 md:px-12 shadow-lg font-sans'>
       <div
-        onClick={() => handleScrollTo('home')}
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        }}
         className='text-red-400 text-2xl sm:text-3xl md:text-4xl font-bold hover:cursor-pointer transition-all duration-500 hover-text-shadow truncate max-w-[70%]'
       >
         SayedMojibSadat
@@ -36,9 +28,10 @@ function Header() {
         {navItems.map((item) => (
           <button
             key={item.id}
-            className={`hover-text-shadow transition-all duration-300 ${item.id === 'home' ? 'text-red-400 font-bold' : 'text-red-100 hover:text-red-400'
-              }`}
-            onClick={() => handleScrollTo(item.id)}
+            className={`hover-text-shadow transition-all duration-300 ${item.id === 'home' ? 'text-red-400 font-bold' : 'text-red-100 '}hover:text-red-400`}
+            onClick={() => {
+              window.scrollTo({ top: (item.cScroll), behavior: 'smooth' })
+            }}
           >
             {item.label}
           </button>
@@ -66,7 +59,10 @@ function Header() {
               key={item.id}
               className={`w-full text-center py-4 text-lg hover:bg-neutral-900 transition-colors duration-200 ${item.id === 'home' ? 'text-red-400 font-bold' : 'text-red-100 hover:text-red-400'
                 }`}
-              onClick={() => handleScrollTo(item.id)}
+              onClick={() => {
+                window.scrollTo({ top: item.mScroll, behavior: 'smooth' })
+                setIsOpen(false)
+              }}
             >
               {item.label}
             </button>

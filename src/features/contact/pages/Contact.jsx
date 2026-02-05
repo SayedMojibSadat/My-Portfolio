@@ -30,7 +30,7 @@ function Contact() {
   return (
     <section
       id='contact'
-      className='min-h-screen bg-neutral-900 text-red-100 pt-10 p-5 md:p-10 flex flex-col gap-10'
+      className='min-h-screen bg-neutral-800 text-red-100 pt-10 p-5 md:p-10 flex flex-col gap-10'
     >
       <div className='w-full flex flex-col items-center justify-center gap-3 mb-10'>
         <h2 className='text-xl text-red-400 text-shadow uppercase'>GET IN TOUCH</h2>
@@ -79,14 +79,14 @@ function Contact() {
               name="name"
               required
               placeholder="Name"
-              className='bg-neutral-800 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all placeholder:text-neutral-500'
+              className='bg-neutral-900 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all placeholder:text-neutral-500'
             />
             <input
               type="email"
               name="email"
               required
               placeholder="Email"
-              className='bg-neutral-800 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all placeholder:text-neutral-500'
+              className='bg-neutral-900 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all placeholder:text-neutral-500'
             />
           </div>
           <input
@@ -94,14 +94,14 @@ function Contact() {
             name="subject"
             required
             placeholder="Subject"
-            className='bg-neutral-800 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all placeholder:text-neutral-500'
+            className='bg-neutral-900 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all placeholder:text-neutral-500'
           />
           <textarea
             name="message"
             required
             placeholder="Message"
             rows="6"
-            className='bg-neutral-800 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all custom-scrollbar placeholder:text-neutral-500'
+            className='bg-neutral-900 border-none text-xl outline-none p-4 rounded-lg text-neutral-200 focus:ring-2 focus:ring-red-400 transition-all custom-scrollbar placeholder:text-neutral-500'
           ></textarea>
 
           <div className='flex items-center justify-between'>

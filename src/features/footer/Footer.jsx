@@ -5,7 +5,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 function Footer() {
     return (
-        <footer className='w-full bg-gradient-to-t from-neutral-950 to-neutral-900 border-t border-neutral-800 pt-10 pb-6 flex flex-col items-center justify-center gap-3'>
+        <footer className='w-full bg-linear-to-t from-neutral-950 to-neutral-900 border-t border-neutral-800 pt-10 pb-6 flex flex-col items-center justify-center gap-3'>
             <p className='text-neutral-400 text-center text-sm md:text-base'>
                 &copy; {new Date().getFullYear()} <span className='text-red-500 font-semibold'>Sayed Mojib Sadat</span>. All rights reserved.
             </p>
