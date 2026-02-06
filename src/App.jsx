@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router" // توجه: در ورژن‌های جدید react-router-dom است
+import { BrowserRouter, Route, Routes } from "react-router" 
 import Header from "./features/shared/components/Header"
 import Pages from "./features/AllPages/Pages"
 import { ThemeProvider } from "./features/themContext/ThemeContext"
-import ThemeSettings from "././features/components/ThemeSettings"
+import ThemeSettings from "./features/themSetting/ThemeSettings"
 
 function App() {
   return (

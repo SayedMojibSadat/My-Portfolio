@@ -1,45 +1,7 @@
 import React from 'react'
+import cartsData from '../store/cartData'
 
 function TableCarts() {
-    const cartsData = [
-        [
-            {
-                title: 'Frontend Development',
-                description: 'Building modern and responsive user interfaces.',
-                tech: 'React · HTML · CSS · Tailwind'
-            },
-            {
-                title: 'Frontend Development',
-                description: 'Building modern and responsive user interfaces.',
-                tech: 'React · HTML · CSS · Tailwind'
-            }
-        ],
-        [
-            {
-                title: 'Frontend Development',
-                description: 'Building modern and responsive user interfaces.',
-                tech: 'React · HTML · CSS · Tailwind'
-            },
-            {
-                title: 'Frontend Development',
-                description: 'Building modern and responsive user interfaces.',
-                tech: 'React · HTML · CSS · Tailwind'
-            }
-        ],
-        [
-            {
-                title: 'Frontend Development',
-                description: 'Building modern and responsive user interfaces.',
-                tech: 'React · HTML · CSS · Tailwind'
-            },
-            {
-                title: 'Frontend Development',
-                description: 'Building modern and responsive user interfaces.',
-                tech: 'React · HTML · CSS · Tailwind'
-            }
-        ],
-    ]
-
     return (
         <div className='w-full space-y-8'>
             {cartsData.map((element, rowIndex) => (
