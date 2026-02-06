@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactTyped } from "react-typed";
-import ImageBar from '../components/ImageBar';
+import ImageBar from '../../home/components/ImageBar';
 
 function Home() {
   return (

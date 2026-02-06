@@ -3,8 +3,6 @@ import TableCarts from '../components/TableCarts'
 
 function Experience() {
 
-
-
   return (
     <section
       id='experience'

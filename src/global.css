@@ -1,36 +1,112 @@
 @import "tailwindcss";
 
+/* تعریف متغیرها */
+:root {
+    --primary-hue: 0;
+    /* پیش‌فرض: قرمز */
+    --primary-sat: 85%;
+}
+
+/* این بخش جادویی است:
+   ما کلاس‌های Tailwind که شما استفاده کرده‌اید را بازنویسی می‌کنیم 
+   تا به جای رنگ ثابت، از متغیر پویا استفاده کنند.
+*/
 @layer utilities {
+
+    /* بازنویسی رنگ‌های متن */
+    .text-red-50 {
+        color: hsl(var(--primary-hue), 100%, 95%) !important;
+    }
+
+    .text-red-100 {
+        color: hsl(var(--primary-hue), 100%, 90%) !important;
+    }
+
+    .text-red-200 {
+        color: hsl(var(--primary-hue), 100%, 80%) !important;
+    }
+
+    .text-red-300 {
+        color: hsl(var(--primary-hue), 100%, 70%) !important;
+    }
+
+    .text-red-400 {
+        color: hsl(var(--primary-hue), 95%, 60%) !important;
+    }
+
+    .text-red-500 {
+        color: hsl(var(--primary-hue), 90%, 50%) !important;
+    }
+
+    .text-red-600 {
+        color: hsl(var(--primary-hue), 90%, 40%) !important;
+    }
+
+    /* بازنویسی رنگ‌های پس‌زمینه */
+    .bg-red-400 {
+        background-color: hsl(var(--primary-hue), 95%, 60%) !important;
+    }
+
+    .bg-red-500 {
+        background-color: hsl(var(--primary-hue), 90%, 50%) !important;
+    }
+
+    .bg-red-600 {
+        background-color: hsl(var(--primary-hue), 90%, 40%) !important;
+    }
+
+    .bg-red-700 {
+        background-color: hsl(var(--primary-hue), 90%, 30%) !important;
+    }
+
+    /* بازنویسی بوردرها */
+    .border-red-400 {
+        border-color: hsl(var(--primary-hue), 95%, 60%) !important;
+    }
+
+    .border-red-500 {
+        border-color: hsl(var(--primary-hue), 90%, 50%) !important;
+    }
+
+    /* بازنویسی سایه‌ها */
+    .shadow-red-400 {
+        --tw-shadow-color: hsl(var(--primary-hue), 95%, 60%) !important;
+    }
+
+    .shadow-red-500\/20 {
+        --tw-shadow-color: hsl(var(--primary-hue), 90%, 50%, 0.2) !important;
+    }
+
+    /* رینگ‌ها (برای اینپوت‌ها) */
+    .focus\:ring-red-400:focus {
+        --tw-ring-color: hsl(var(--primary-hue), 95%, 60%) !important;
+    }
+
+    /* کدهای قبلی شما با جایگزینی متغیر */
     .text-shadow-sm {
-        text-shadow: 0px 0px 7px rgb(255, 0, 0);
+        text-shadow: 0px 0px 7px hsl(var(--primary-hue), 100%, 50%);
     }
 
     .text-shadow {
-        text-shadow: 0px 0px 15px rgb(255, 0, 0);
+        text-shadow: 0px 0px 15px hsl(var(--primary-hue), 100%, 50%);
     }
 
     .text-shadow-lg {
-        text-shadow: 0px 0px 20px rgb(255, 0, 0);
+        text-shadow: 0px 0px 20px hsl(var(--primary-hue), 100%, 50%);
     }
 
     .hover-text-shadow-sm:hover {
-        text-shadow: 0px 0px 10px rgb(255, 0, 0);
+        text-shadow: 0px 0px 10px hsl(var(--primary-hue), 100%, 50%);
     }
 
     .hover-text-shadow:hover {
-        text-shadow: 0px 0px 15px rgb(255, 0, 0);
+        text-shadow: 0px 0px 15px hsl(var(--primary-hue), 100%, 50%);
     }
 
     .hover-text-shadow-lg:hover {
-        text-shadow: 0px 0px 20px rgb(255, 0, 0);
+        text-shadow: 0px 0px 20px hsl(var(--primary-hue), 100%, 50%);
     }
 }
-
-
-
-
-
-
 
 .home__img--wrapper {
     width: 100%;
@@ -51,12 +127,14 @@
 }
 
 .home__img--wrapper::before {
-    background-color: oklch(70.4% 0.191 22.216);
+    background-color: hsl(var(--primary-hue), 60%, 62%);
+    /* این رنگ خنثی است و می‌تواند بماند */
     animation: animate__before 8s ease-in-out infinite;
 }
 
 .home__img--wrapper::after {
-    background-color: #fb2c36;
+    /* تغییر رنگ Hex ثابت به متغیر داینامیک */
+    background-color: hsl(var(--primary-hue), 90%, 55%);
     animation: animate__before 8s ease-in-out infinite;
 }
 
@@ -115,9 +193,6 @@
     }
 }
 
-
-
-
 @font-face {
     font-family: 'simpleFont';
     src: url('/public/fonts/SairaStencilOne-Regular.ttf');
@@ -133,14 +208,12 @@
 }
 
 .box-shadow {
-    box-shadow: 0px 0px 12px rgb(255, 0, 0);
+    box-shadow: 0px 0px 12px hsl(var(--primary-hue), 100%, 50%);
 }
 
 .hover-box-shadow:hover {
-    box-shadow: 0px 0px 12px rgb(255, 0, 0);
-    /* box-shadow: 0px 0px 12px #ffffff00; */
+    box-shadow: 0px 0px 12px hsl(var(--primary-hue), 100%, 50%);
 }
-
 
 .Experiance__pos__center {
     position: relative;
@@ -154,27 +227,130 @@
     right: -583px;
 }
 
+
 @layer utilities {
+
+    /* بازنویسی رنگ‌های متن در حالت عادی */
+    .text-red-400 {
+        color: hsl(var(--primary-hue), 95%, 60%) !important;
+    }
+
+    .text-red-500 {
+        color: hsl(var(--primary-hue), 90%, 50%) !important;
+    }
+
+    /* اضافه کردن حالت Hover برای متن‌ها */
+    /* این بخش باعث می‌شود وقتی روی المان‌هایی با این کلاس‌ها هاور شود، رنگ تغییر کند */
+    .hover\:text-red-400:hover {
+        color: hsl(var(--primary-hue), 95%, 60%) !important;
+    }
+
+    .hover\:text-red-600:hover {
+        color: hsl(var(--primary-hue), 90%, 40%) !important;
+    }
+
+    /* بازنویسی رنگ‌های پس‌زمینه در حالت عادی */
+    .bg-red-500 {
+        background-color: hsl(var(--primary-hue), 90%, 50%) !important;
+    }
+
+    .bg-red-600 {
+        background-color: hsl(var(--primary-hue), 90%, 40%) !important;
+    }
+
+    /* اضافه کردن حالت Hover برای پس‌زمینه دکمه‌ها */
+    .hover\:bg-red-500:hover {
+        background-color: hsl(var(--primary-hue), 90%, 50%) !important;
+    }
+
+    .hover\:bg-red-700:hover {
+        background-color: hsl(var(--primary-hue), 90%, 30%) !important;
+    }
+
+    /* بازنویسی بوردرها در حالت Hover (برای کارت‌های تجربه و پورتفولیو) */
+    .hover\:border-red-500:hover {
+        border-color: hsl(var(--primary-hue), 90%, 50%) !important;
+    }
+
+    /* اصلاح سایه‌ها در حالت Hover */
+    .hover\:box-shadow:hover {
+        box-shadow: 0px 0px 15px hsl(var(--primary-hue), 100%, 50%) !important;
+    }
+
+    .hover\:text-white:hover {
+        color: #ffffff !important;
+    }
+
+    /* اگر از کلاس خنثی یا تیره هم برای هاور متن استفاده کرده‌اید، این را هم اضافه کنید */
+    .hover\:text-neutral-950:hover {
+        color: #0a0a0a !important;
+    }
+
+}
+
+@layer utilities {
+
+    /* مطمئن شدن از اینکه مودال همیشه اسکرول‌بار درست را نشان می‌دهد */
+    .modal-open {
+        overflow: hidden !important;
+        padding-right: 5px;
+        /* جلوگیری از پرش صفحه هنگام مخفی شدن اسکرول‌بار اصلی */
+    }
+
+    /* اختصاصی کردن اسکرول‌بار برای محتوای داخل مودال */
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--primary-hue), 90%, 50%) #171717;
+    }
+
     .custom-scrollbar::-webkit-scrollbar {
-        width: 5px;
+        width: 6px;
     }
 
     .custom-scrollbar::-webkit-scrollbar-track {
         background: #171717;
-        border-radius: 10px;
     }
 
     .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #ef4444;
+        background: hsl(var(--primary-hue), 90%, 50%);
         border-radius: 10px;
     }
+}
 
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #b91c1c;
+
+/* انیمیشن برای آیکون چرخ‌دنده تنظیمات */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
     }
 
-    .custom-scrollbar {
-        scrollbar-width: thin;
-        scrollbar-color: #ef4444 #171717;
+    to {
+        transform: rotate(360deg);
     }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+}
+
+/* افکت Fade In برای باز شدن مدال‌های پورتفولیو */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* استایل زد-ایندکس برای بالاتر بودن مدال‌ها از همه‌چیز */
+.z-60 {
+    z-index: 60;
 }

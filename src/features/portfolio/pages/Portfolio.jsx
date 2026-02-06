@@ -195,7 +195,7 @@ function Portfolio() {
                   href={selectedProject.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className='flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-all'
+                  className='flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 transition-all duration-500 text-white font-bold rounded-lg'
                 >
                   View Live Project <RiShareBoxFill />
                 </a>

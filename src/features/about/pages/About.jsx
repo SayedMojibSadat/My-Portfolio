@@ -47,7 +47,7 @@ function About() {
             </div>
           </div>
           <div className='flex flex-wrap justify-center lg:justify-start gap-4'>
-            <button className='h-12 md:h-14 px-8 bg-red-500 rounded-xl hover:bg-red-700 box-shadow shadow-red-400 transition duration-700'>
+            <button className='h-12 md:h-14 px-8 bg-red-500 rounded-xl hover:bg-red-700 transition duration-700'>
               Hire Me
             </button>
           </div>
