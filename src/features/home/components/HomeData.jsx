@@ -2,6 +2,8 @@ import React from 'react'
 import { ReactTyped } from "react-typed";
 
 function HomeData() {
+
+
     return (
         <div className='w-full lg:w-11/20 px-6 md:px-12 text-red-100 flex flex-col items-center lg:items-start text-center lg:text-left justify-center gap-6 md:gap-8'>
             <div className='gap-3 flex flex-col w-full'>
@@ -27,10 +29,30 @@ function HomeData() {
                 I specialize in designing and developing full‑stack applications that merge functionality with aesthetics. My work combines modern frameworks and responsive design to deliver seamless user experiences.
             </p>
             <div className='flex flex-row flex-wrap justify-center lg:justify-start gap-4 text-sm md:text-base lg:text-xl w-full'>
-                <button className='h-11 md:h-14 px-6 md:px-10 bg-red-500 rounded-xl hover:bg-red-700 shadow-lg shadow-red-500/20 transition duration-700 text-white'>
+                <button
+                    onClick={() => {
+                        const contactScroll = document.getElementById('contact')
+                        if (contactScroll) {
+                            contactScroll.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }}
+                    className='h-11 md:h-14 px-6 md:px-10 bg-red-500 rounded-xl hover:bg-red-700 shadow-lg shadow-red-500/20 transition duration-700 text-white'>
                     Hire Me
                 </button>
-                <button className='h-11 md:h-14 px-6 md:px-10 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition duration-700 rounded-xl'>
+                <button
+                    onClick={() => {
+                        const portfolioScroll = document.getElementById('portfolio')
+                        if (portfolioScroll) {
+                            portfolioScroll.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }}
+                    className='h-11 md:h-14 px-6 md:px-10 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition duration-700 rounded-xl'>
                     Portfolio
                 </button>
             </div>

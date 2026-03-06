@@ -29,7 +29,7 @@ function Portfolio() {
   return (
     <section
       id='portfolio'
-      className='min-h-screen bg-neutral-900 text-red-100 pt-10 p-5 md:p-10 flex flex-col gap-15'
+      className='min-h-screen scroll-mt-21 bg-neutral-900 text-red-100 pt-10 p-5 md:p-10 flex flex-col gap-15'
     >
       <div className='w-full flex flex-col items-center justify-center gap-3 mb-10'>
         <h2 className='text-xl text-red-400 text-shadow uppercase'>My Portfolio</h2>
