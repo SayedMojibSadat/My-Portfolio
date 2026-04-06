@@ -5,7 +5,7 @@ import Experience from '../experience/pages/Experience'
 import Service from '../service/pages/Service'
 import Portfolio from '../portfolio/pages/Portfolio'
 import Contact from '../contact/pages/Contact'
-import Skills from '../skills/pages/skills'
+import Skills from '../skills/pages/Skills'
 import Footer from '../footer/Footer'
 
 function Pages() {

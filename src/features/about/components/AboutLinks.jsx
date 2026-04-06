@@ -1,4 +1,6 @@
 import React from 'react'
+import { FaGithub, FaTelegram } from "react-icons/fa";
+import { RiWhatsappFill } from "react-icons/ri";
 
 function AboutLinks() {
     return (
@@ -25,10 +27,24 @@ function AboutLinks() {
                     </h1>
                 </div>
             </div>
-            <div className='flex flex-wrap justify-center lg:justify-start gap-4'>
-                <button className='h-12 md:h-14 px-8 bg-red-500 rounded-xl hover:bg-red-700 transition duration-700'>
-                    Hire Me
-                </button>
+            <div className='flex flex-wrap items-center justify-center lg:justify-start gap-20'>
+                <a
+                    href='images/darkMan.png'
+                    download={'Sayed_Mojib_CV.pdf'}
+                    className='h-12 md:h-14 px-8 flex items-center justify-center cursor-pointer bg-red-500 rounded-xl hover:bg-red-700 transition duration-700'>
+                    Download CV
+                </a>
+                <div className='flex gap-5'>
+                    <a href='https://github.com/SayedMojibSadat' target='__blank' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
+                        <FaGithub size={25} />
+                    </a>
+                    <a href='https://t.me/@Sayedmojibsadat' target='__blank' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
+                        <FaTelegram size={25} />
+                    </a>
+                    <a href='https://wa.me/93799117595' target='__blank' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
+                        <RiWhatsappFill size={27} />
+                    </a>
+                </div>
             </div>
         </div>
     )

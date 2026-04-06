@@ -13,13 +13,13 @@ function Footer() {
                 Designed & Built by <span className='text-red-400'>SayedMojibSadat</span> using React & Tailwind
             </p>
             <div className='flex gap-4 mt-2'>
-                <a href='https://github.com/SayedMojibSadat' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
+                <a href='https://github.com/SayedMojibSadat' target='__blank' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
                     <FaGithub size={20} />
                 </a>
-                <a href='https://t.me/@Sayedmojibsadat' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
+                <a href='https://t.me/@Sayedmojibsadat' target='__blank' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
                     <FaTelegram size={20} />
                 </a>
-                <a href='https://wa.me/93799117595' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
+                <a href='https://wa.me/93799117595' target='__blank' className='text-red-400 hover:text-red-600 transition duration-500 md:text-base'>
                     <IoLogoWhatsapp size={20} />
                 </a>
             </div>

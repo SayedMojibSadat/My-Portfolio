@@ -50,7 +50,13 @@ function Header() {
               className={`w-full text-center py-4 text-lg hover:bg-neutral-900 transition-colors duration-200 ${item.id === 'home' ? 'text-red-400 font-bold' : 'text-red-100 hover:text-red-400'
                 }`}
               onClick={() => {
-                window.scrollTo({ top: item.mScroll, behavior: 'smooth' })
+                const pageScroll = document.getElementById(navItems.id)
+                if (pageScroll) {
+                  pageScroll.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }
                 setIsOpen(false)
               }}
             >
