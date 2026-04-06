@@ -1,18 +1,18 @@
 const projects = [
   {
-    title: 'Time Manager',
-    imageUrl: 'projects_images/time_manager/1.png',
+    title: 'FilmCenter',
+    imageUrl: 'projects_images/filmcenter/2.png',
     desc: 'Aplication for management your time in special days such examp days, its fearures are clock, counter, alarm, stopwatch and pomodoro.',
     usedTechnologies: ['HTML', 'CSS', 'JavaScript'],
     gallery: [
-      'projects_images/time_manager/1.png',
-      'projects_images/time_manager/2.png',
-      'projects_images/time_manager/3.png',
-      'projects_images/time_manager/4.png',
-      'projects_images/time_manager/5.png',
-      'projects_images/time_manager/6.png',
+      'projects_images/filmcenter/1.png',
+      'projects_images/filmcenter/2.png',
+      'projects_images/filmcenter/3.png',
+      'projects_images/filmcenter/4.png',
+      'projects_images/filmcenter/5.png',
+      'projects_images/filmcenter/6.png',
     ],
-    link: 'https://google.com'
+    link: '#'
   },
   {
     title: 'Task Manager',

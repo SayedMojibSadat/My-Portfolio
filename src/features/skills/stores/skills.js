@@ -11,17 +11,17 @@ const skills = [
     },
     {
         name: 'Tailwind CSS',
-        level: 85,
+        level: 90,
         description: 'Developing scalable and responsive user interfaces using utility-first CSS.'
     },
     {
         name: 'JavaScript',
-        level: 80,
+        level: 85,
         description: 'Implementing dynamic behavior and client-side application logic.'
     },
     {
         name: 'React',
-        level: 75,
+        level: 90,
         description: 'Building reusable components and single-page applications.'
     },
     {
@@ -31,12 +31,12 @@ const skills = [
     },
     {
         name: 'Express.js',
-        level: 70,
+        level: 90,
         description: 'Building RESTful APIs and handling server-side logic.'
     },
     {
-        name: 'SQL',
-        level: 70,
+        name: 'PostgreSQL',
+        level: 90,
         description: 'Designing databases, writing queries, and managing relational data.'
     }
 ];

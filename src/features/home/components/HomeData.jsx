@@ -31,12 +31,11 @@ function HomeData() {
             <div className='flex flex-row flex-wrap justify-center lg:justify-start gap-4 text-sm md:text-base lg:text-xl w-full'>
                 <button
                     onClick={() => {
-                        const contactScroll = document.getElementById('contact')
-                        if (contactScroll) {
-                            contactScroll.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
+                        const element = document.getElementById('contact');
+                        if (element) {
+                            const header = document.querySelector('header');
+                            const headerHeight = header ? header.offsetHeight : 0;
+                            window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' });
                         }
                     }}
                     className='h-11 md:h-14 px-6 md:px-10 bg-red-500 rounded-xl hover:bg-red-700 shadow-lg shadow-red-500/20 transition duration-700 text-white'>
@@ -44,12 +43,11 @@ function HomeData() {
                 </button>
                 <button
                     onClick={() => {
-                        const portfolioScroll = document.getElementById('portfolio')
-                        if (portfolioScroll) {
-                            portfolioScroll.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
+                        const element = document.getElementById('portfolio');
+                        if (element) {
+                            const header = document.querySelector('header');
+                            const headerHeight = header ? header.offsetHeight : 0;
+                            window.scrollTo({ top: element.offsetTop - headerHeight, behavior: 'smooth' });
                         }
                     }}
                     className='h-11 md:h-14 px-6 md:px-10 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition duration-700 rounded-xl'>
