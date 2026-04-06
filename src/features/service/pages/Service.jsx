@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { FiLayers } from "react-icons/fi";
 import { FaLaptopCode } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
@@ -63,15 +64,15 @@ function Service() {
         <h2 className='text-4xl text-center text-neutral-50'>What I done For you</h2>
       </div>
 
-      <div className='h-full w-full gap-7 flex flex-col mb-15'>
+      <motion.div className='h-full w-full gap-7 flex flex-col mb-15' initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.2 } } }}>
         {serviceData.map((element) => (
-          <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7'>
+          <motion.div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7' variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
             {element.map((data) => (
               <ServiceCart icon={data.icon} count={data.count} title={data.title} describe={data.describe} />
             ))}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

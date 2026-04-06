@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion'
 import { RiShareBoxFill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import projects from '../store/projectCarts';
@@ -36,9 +37,10 @@ function Portfolio() {
         <h2 className='text-4xl text-neutral-50'>Recent Works</h2>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+      <motion.div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5' initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.1 } } }}>
         {projects.map((item, index) => (
-          <div
+          <motion.div key={index} variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+            <div
             key={index}
             onClick={() => openModal(item)}
             className='rounded-xl shadow shadow-neutral-600 overflow-hidden relative group cursor-pointer h-64'
@@ -57,8 +59,9 @@ function Portfolio() {
               </span>
             </div>
           </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {selectedProject && (
         <div

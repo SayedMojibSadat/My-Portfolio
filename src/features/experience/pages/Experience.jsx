@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import TableCarts from '../components/TableCarts'
 
 function Experience() {

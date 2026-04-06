@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion'
 import { IoMdCall, IoMdMail, IoMdPin, IoMdSend } from "react-icons/io";
 import ContactData from '../components/ContactData';
 import ContactForm from '../components/ContactForm';
@@ -30,9 +31,13 @@ function Contact() {
   };
 
   return (
-    <section
+    <motion.section
       id='contact'
       className='min-h-screen scroll-mt-21 bg-neutral-800 text-red-100 pt-10 p-5 md:p-10 flex flex-col gap-10'
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
     >
       <div className='w-full flex flex-col items-center justify-center gap-3 mb-10'>
         <h2 className='text-xl text-red-400 text-shadow uppercase'>GET IN TOUCH</h2>
@@ -43,7 +48,7 @@ function Contact() {
         <ContactData />
         <ContactForm onSubmit={onSubmit} result={result} />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

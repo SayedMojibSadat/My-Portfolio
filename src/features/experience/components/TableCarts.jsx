@@ -1,11 +1,12 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import cartsData from '../store/cartData'
 
 function TableCarts() {
     return (
-        <div className='w-full space-y-8'>
+        <motion.div className='w-full space-y-8' initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.2 } } }}>
             {cartsData.map((element, rowIndex) => (
-                <div key={rowIndex} className='flex flex-col md:flex-row gap-6'>
+                <motion.div key={rowIndex} variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className='flex flex-col md:flex-row gap-6'>
                     {element.map((data, index) => (
                         <div
                             key={index}
@@ -22,9 +23,9 @@ function TableCarts() {
                             </div>
                         </div>
                     ))}
-                </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
     )
 }
 

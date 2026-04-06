@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { set } from 'react-hook-form';
 import SkillCarts from '../components/SkillCarts';
 import skills from '../stores/skills';
@@ -15,11 +16,13 @@ function Skills() {
                 <h2 className='text-4xl text-neutral-50'>Professional Skills</h2>
             </div>
 
-            <div className='h-full w-full gap-7 mb-15 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4'>
+            <motion.div className='h-full w-full gap-7 mb-15 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4' initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ visible: { transition: { staggerChildren: 0.1 } } }}>
                 {skills.map((element, index) => (
-                    <SkillCarts key={index} name={element.name} level={element.level} description={element.description} />
+                    <motion.div key={index} variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}>
+                        <SkillCarts name={element.name} level={element.level} description={element.description} />
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     )
 
